@@ -8,11 +8,10 @@ import os
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///market.db"
-app.config['SECRET_KEY'] = "1275e186f427443a6ceb5c75"
-# app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:postgres@localhost:5432/market"
-# app.config.from_object(Config)
-# app.secret_key = os.urandom(24)
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+# app.config['SECRET_KEY'] = "1275e186f427443a6ceb5c75"
+app.config.from_object(Config)
+app.secret_key = os.urandom(24)
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
