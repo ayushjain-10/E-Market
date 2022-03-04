@@ -1,7 +1,6 @@
 import click
 from flask.cli import with_appcontext
 
-from market import app
 from flask import render_template, redirect, url_for, flash, request
 from market.models import Items, User
 from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm
