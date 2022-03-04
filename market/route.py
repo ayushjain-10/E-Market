@@ -8,10 +8,6 @@ from flask_login import login_user, logout_user, login_required, current_user
 # with app.app_context():
 #     db.create_all()
 
-@click.command(name='create_tables')
-@with_appcontext
-def create_tables():
-    db.create_al1()
 
 @app.route('/')
 @app.route('/home')
