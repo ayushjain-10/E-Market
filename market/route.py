@@ -42,7 +42,7 @@ def market_page():
         return redirect(url_for('market_page'))
 
     if request.method=="GET":
-        items = Items.query.filter_by(owner=None)
+        items = Items.query.all()
         owned_items = Items.query.filter_by(owner=current_user.id)
         return render_template('market.html', items=items, purchase_form=purchase_form, owned_items=owned_items, selling_form=selling_form)
 
